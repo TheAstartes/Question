@@ -4,6 +4,9 @@ const body = document.getElementById('body-bg');
 const quizContainer = document.getElementById('quiz-container');
 const celebration = document.getElementById('celebration');
 
+
+const music = document.getElementById('celebrationMusic');
+
 let yesFontSize = 1.2;
 
 // 1. The "No" Button escape logic
@@ -24,6 +27,10 @@ noBtn.addEventListener('mouseover', () => {
 
 // 2. The "Yes" Button click logic
 yesBtn.addEventListener('click', () => {
+    music.play().catch(error => {
+        console.log("Audio playback failed:", error);
+    });
+    
     // Change background to "Happy"
     body.classList.add('celebrate');
     
